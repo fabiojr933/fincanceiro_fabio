@@ -1,0 +1,425 @@
+<%- include('./includes/header') %>
+
+<body>
+
+<div class="theme-loader">
+    <div class="loader-track">
+        <div class="preloader-wrapper">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+        <%- include('./includes/top') %>
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+
+                <%- include('./includes/nav') %>
+
+
+                <div class="pcoded-content">
+                    <!-- Page-header start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Área Administrativa</h5>
+                                        <p class="m-b-0">Seja bem vindo <%= usuario %></p>
+                                    </div>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>                   
+                    <div class="pcoded-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                  <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card">
+                                                <div class="card-block">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-8">
+                                                            <h5 class="text-c-blue">R$: <%= (conta[0].saldo == null) ? 0.00 : conta[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></h5>
+                                                        </div>
+                                                        <div class="col-4 text-right">
+                                                            <i class="fa fa-hand-o-down f-28"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-c-blue">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-9">
+                                                            <p class="text-white m-b-0"><%= conta[0].banco %></p>
+                                                        </div>
+                                                        <div class="col-3 text-right">
+                                                            <i class="fa fa-line-chart text-white f-16"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card">
+                                                <div class="card-block">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-8">
+                                                            <h5 class="text-c-purple">R$: <%= (conta[1].saldo == null) ? 0.00 : conta[1].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></h5>
+                                                        </div>
+                                                        <div class="col-4 text-right">
+                                                            <i class="fa fa-bar-chart f-28"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-c-purple">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-9">
+                                                            <p class="text-white m-b-0"><%= conta[1].banco %></p>
+                                                        </div>
+                                                        <div class="col-3 text-right">
+                                                            <i class="fa fa-line-chart text-white f-16"></i>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card">
+                                                <div class="card-block">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-8">
+                                                            <h5 class="text-c-green">R$: <%= (receita[0].receita == null) ? 0.00 : receita[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </h5>
+                                                        </div>
+                                                        <div class="col-4 text-right">
+                                                            <i class="fa fa-file-text-o f-28"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-c-green">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-9">
+                                                            <p class="text-white m-b-0">Total das receitas</p>
+                                                        </div>
+                                                        <div class="col-3 text-right">
+                                                            <i class="fa fa-line-chart text-white f-16"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card">
+                                                <div class="card-block">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-8">
+                                                            <h5 class="text-c-red">R$: <%= (despesa[0].despesa == null) ? 0.00 : despesa[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </h5>
+                                                        </div>
+                                                        <div class="col-4 text-right">
+                                                            <i class="fa fa-calendar-check-o f-28"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-c-red">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-9">
+                                                            <p class="text-white m-b-0">Total das despesas</p>
+                                                        </div>
+                                                        <div class="col-3 text-right">
+                                                            <i class="fa fa-line-chart text-white f-16"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                             
+                                </div>  
+
+
+
+
+
+
+
+
+                                
+						
+						
+						
+						
+                        <!-- Page-header end -->
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <!-- SITE VISIT CHART start -->
+                                            <div class="col-md-12 col-lg-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Relatorio total de despesa</h5>
+                                                        <span>Relatorio do perido <%=mes%>/<%=ano%>  </span>
+                                                        <canvas id="grafico01" width="400" height="400"></canvas>
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                            <!-- SITE VISIT CHART Ends -->
+                                            <!-- Bar Chart start -->
+                                            <div class="col-md-12 col-lg-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Relatorio total de receita</h5>
+                                                        <span>Relatorio do perido <%=mes%>/<%=ano%>  </span>
+                                                    </div>
+                                                    <canvas id="grafico02" width="400" height="400"></canvas>
+                                                </div>
+                                            </div>
+                                           
+                                            <!-- Area Chart Ends -->
+                                            <!-- LINE CHART start -->
+                                            <div class="col-md-12 col-lg-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Relatorio total de despesa</h5>
+                                                        <span>Relatorio do perido <%=mes%>/<%=ano%>  </span>
+                                                    </div>
+                                                    <canvas id="grafico03" width="400" height="400"></canvas>
+                                                </div>
+                                            </div>
+                                            <!-- LINE CHART Ends -->
+                                            <!-- Donut chart start -->
+                                            <div class="col-md-12 col-lg-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Relatorio total de receita</h5>
+                                                        <span>Relatorio do perido <%=mes%>/<%=ano%>  </span>
+                                                    </div>
+                                                    <canvas id="grafico04" width="400" height="400"></canvas>
+                                                </div>
+                                            </div>
+                                            <!-- Donut chart Ends -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="styleSelector">
+
+                            </div>
+                        </div>
+                                
+                                
+                              
+                    </div>
+                </div>
+                <div id="styleSelector">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./includes/footer') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>  
+    const total = [];
+    const mes = [];
+
+
+    '<% grafico01.forEach((row, index) => { %>'      
+        total.push('<%- row.total %>');
+        mes.push('<%- row.mes %>');
+    '<% }); %>'
+
+
+    const ctx = document.getElementById('grafico01').getContext('2d');
+    const grafico01 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: mes,
+            datasets: [{
+                label: 'Valor',
+                data: total,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+
+<script>  
+    const total2 = [];
+    const mes2 = [];
+
+
+    '<% grafico02.forEach((row, index) => { %>'      
+        total2.push('<%- row.total %>');
+        mes2.push('<%- row.mes %>');
+    '<% }); %>'
+
+
+    const ctx2 = document.getElementById('grafico02').getContext('2d');
+    const grafico02 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: mes2,
+            datasets: [{
+                label: 'Valor',
+                data: total2,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+
+<script>  
+    const total3 = [];
+    const mes3 = [];
+
+
+    '<% grafico01.forEach((row, index) => { %>'      
+        total3.push('<%- row.total %>');
+        mes3.push('<%- row.mes %>');
+    '<% }); %>'
+
+
+    const ctx3 = document.getElementById('grafico03').getContext('2d');
+    const grafico03 = new Chart(ctx3, {
+        type: 'line',
+        data: {
+        labels: mes3,
+        datasets: [{
+            label: 'Periodo',
+            data: total3,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+}
+    });
+    </script>
+
+<script>  
+    const total4 = [];
+    const mes4 = [];
+
+
+    '<% grafico02.forEach((row, index) => { %>'      
+        total4.push('<%- row.total %>');
+        mes4.push('<%- row.mes %>');
+    '<% }); %>'
+
+
+    const ctx4 = document.getElementById('grafico04').getContext('2d');
+    const grafico04 = new Chart(ctx4, {
+        type: 'line',
+        data: {
+        labels: mes4,
+        datasets: [{
+            label: 'Periodo',
+            data: total4,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+}
+    });
+    </script>
+
+</body>
+
+</html>

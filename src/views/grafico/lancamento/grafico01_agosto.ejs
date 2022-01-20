@@ -1,0 +1,121 @@
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+  integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<div class="row">
+<div class="col-md-12 col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <h5>Relatorio despesas</h5>
+    </div>
+    <canvas id="agosto_despesa" width="400" height="400"></canvas>
+  </div>
+</div>
+<div class="col-md-12 col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <h5>Relatorio receitas</h5>
+    </div>
+    <canvas id="agosto_receita" width="400" height="400"></canvas>
+  </div>
+</div>
+</div>
+
+
+<script>
+  const total_agosto_01 = [];
+  const despesa_agosto_01 = [];
+
+  ("<% agosto_despesa.forEach((row, index) => { %>");
+  total_agosto_01.push("<%- row.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %>");
+  despesa_agosto_01.push("<%- row.despesa %>");
+  ("<% }); %>");
+
+  
+  var ctx = document.getElementById('agosto_despesa').getContext('2d');
+var agosto_despesa = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: despesa_agosto_01,
+        datasets: [{
+            label: 'Valor',
+            data: total_agosto_01,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+
+<script>
+  const total_agosto_02 = [];
+  const receita_agosto_02 = [];
+
+  ("<% agosto_receita.forEach((row, index) => { %>");
+  total_agosto_02.push("<%- row.valor %>");
+  receita_agosto_02.push("<%- row.receita %>");
+  ("<% }); %>");
+
+  
+  var ctx = document.getElementById('agosto_receita').getContext('2d');
+var agosto_receita = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: receita_agosto_02,
+        datasets: [{
+            label: 'Valor',
+            data: total_agosto_02,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>

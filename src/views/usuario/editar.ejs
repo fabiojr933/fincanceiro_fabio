@@ -1,0 +1,151 @@
+<%- include('../includes/header') %>
+
+<body>
+
+<div class="theme-loader">
+    <div class="loader-track">
+        <div class="preloader-wrapper">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <%- include('../includes/top') %>
+    
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+
+                <%- include('../includes/nav') %>
+
+
+                <div class="pcoded-content">
+                    <!-- Page-header start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Área Administrativa</h5>
+                                        <p class="m-b-0"></p>
+                                    </div>                                  
+                                </div> 
+                                <div class="col-md-6">
+                                    <%- include('../includes/messeges') %>
+                                </div>                              
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    <!-- Page-header end -->
+                    <div class="pcoded-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>Editar usarios</h5>
+                                                    
+                                                </div>
+                                                <div class="card-block">
+                                                    <form action="/usuario/atualizar" method="post">
+                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                        <input type="hidden" class="form-control" name="id" value="<%= usuario[0].id %>">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <label>Name</label>
+                                                                <input type="text" class="form-control" name="nome" value="<%= usuario[0].nome %>"
+                                                                placeholder="Nome">
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label>Email</label>
+                                                                <input type="email" class="form-control" name="email" value="<%= usuario[0].email %>"
+                                                                placeholder="Email">
+                                                            </div>
+                                                        </div> 
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <label>Telefone</label>
+                                                                <input type="number" class="form-control" name="telefone" value="<%= usuario[0].telefone %>"
+                                                                placeholder="Telefone">
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label>Senha</label>
+                                                                <input type="password" class="form-control" name="senha"
+                                                                placeholder="Senha">
+                                                            </div>
+                                                        </div> 
+                                                        <button type="submit" class="btn waves-effect waves-light btn-primary btn-square">Salvar</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="styleSelector">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../includes/footer') %>
+</body>
+
+</html>

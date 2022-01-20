@@ -1,0 +1,201 @@
+<%- include('../includes/header') %>
+
+<body>
+
+<div class="theme-loader">
+    <div class="loader-track">
+        <div class="preloader-wrapper">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+        <%- include('../includes/top') %>
+    
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+
+                <%- include('../includes/nav') %>
+
+
+                <div class="pcoded-content">
+                    <!-- Page-header start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Área Administrativa</h5>
+                                        <p class="m-b-0">Seja bem vindo </p>
+                                    </div>                                 
+                                </div> 
+                                <div class="col-md-6">
+                                    <%- include('../includes/messeges') %>
+                                </div>                             
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                   
+                    
+                    <!-- Page-header end -->
+                    <div class="pcoded-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                 <div class="form-group row">
+                                                   <div class="col-sm-10">
+                                                    <h5>Lista de receitas</h5>     
+                                                   </div>      
+                                                   <div class="col-sm-2">
+                                                    <a href="/receita/novo" type="submit" class="btn waves-effect waves-light btn-primary btn-square">Nova receita</a>
+                                                   </div>                                             
+                                                </div>
+                                            </div>
+
+                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                    <thead>                                                      
+                                                        <tr>
+                                                            <th scope="col">Id</th>
+                                                            <th scope="col">Nome</th>                                                            
+                                                            <th scope="col">Acão</th>                      
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                   
+                                                        <% receita.forEach(element => { %>
+                                                            <tr>
+                                                                <th scope="row">
+                                                               <%= element.id %>
+                                                                </th>
+                                                                <td>
+                                                                    <%= element.receita %>  
+                                                                </td>
+                                                                
+                                                                <td>
+                                                                    <a title="Editar"
+                                                                        href="/receita/editar/<%= element.id %>"><i
+                                                                            class="fas fa-edit"></i></a>
+                                                                    <form
+                                                                        action="/receita/deletar" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
+                                                            <%}) %> 
+                                                    </tbody>
+                                                </table>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="styleSelector">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../includes/footer') %>
+<script>
+    function confirmaDelecao(event, form){
+        event.preventDefault();
+        var decisao = confirm('Deseja realmente deletar essa receita?');
+        if(decisao){
+            form.submit();
+        }
+    }
+</script>
+<script>   
+    $(document).ready(function () {
+        $('#datatable').DataTable({
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Exibir _MENU_ registros por página",
+                "sZeroRecords": "Nenhum resultado encontrado",
+                "sEmptyTable": "Nenhum resultado encontrado",
+                "sInfo": "Exibindo do _START_ até _END_ de um total de _TOTAL_ registros",
+                "sInfoEmpty": "Exibindo do 0 até 0 de um total de 0 registros",
+                "sInfoFiltered": "(Filtrado de um total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ativar para ordenar a columna de maneira ascendente",
+                    "sSortDescending": ": Ativar para ordenar a columna de maneira descendente"
+                }
+            }
+        });
+    });                       
+</script>
+</body>
+
+</html>

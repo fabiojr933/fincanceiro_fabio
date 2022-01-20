@@ -1,0 +1,1329 @@
+<%- include('../includes/header') %>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"/>
+
+<body>
+
+<div class="theme-loader">
+    <div class="loader-track">
+        <div class="preloader-wrapper">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+        <%- include('../includes/top') %>
+    
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+
+                <%- include('../includes/nav') %>
+
+
+                <div class="pcoded-content">
+                    <!-- Page-header start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Área Administrativa</h5>
+                                        <p class="m-b-0">Seja bem vindo </p>
+                                    </div>                                 
+                                </div> 
+                                <div class="col-md-6">
+                                    <%- include('../includes/messeges') %>
+                                </div>                             
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                   
+                    
+                    <!-- Page-header end -->
+                    <div class="pcoded-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card">                                               
+                                                 <div class="form-group row">
+                                                   <div class="col-sm-8">
+                                                    <h5>Lançamentos</h5>     
+                                                   </div>                                                     
+                                                   <div class="col-sm-2">                                                    
+                                                    <input  class="form-control" type="text" id="datepicker" placeholder="Escolha um ano"/> 
+                                                   </div>  
+                                                   <div class="col-sm-2">
+                                                    <a href="/" type="submit" class="btn waves-effect waves-light btn-primary btn-square">Pesquisar</a>
+                                                   </div>                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="card">                                               
+                                                <div class="form-group row">
+                                                    <div class="col-sm-12"> <br>
+                                                        <a href="/lancamento/novo" type="submit" class="btn waves-effect waves-light btn-primary btn-square">Novo lancamento</a>
+                                                    </div>                                 
+                                               </div>
+                                           </div>
+  
+                                                
+                                        <div class="col-sm-12">
+                                            <!-- Bootstrap tab card start -->
+                                            <div class="card">                                               
+                                                <div class="card-block">
+                                                    <!-- Row start -->
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-xl-12">
+                                                            <div class="sub-title">Seus lançamentos</div>
+                                                            <!-- Nav tabs -->
+                                                            <ul class="nav nav-tabs  tabs" role="tablist">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link " data-toggle="tab" href="#Janeiro" role="tab">Janeiro</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Fevereiro" role="tab">Fevereiro</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Marco" role="tab">Marco</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Abril" role="tab">Abril</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Maio" role="tab">Maio</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Junho" role="tab">Junho</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Julho" role="tab">Julho</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Agosto" role="tab">Agosto</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Setembro" role="tab">Setembro</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Outubro" role="tab">Outubro</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Novembro" role="tab">Novembro</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-toggle="tab" href="#Dezembro" role="tab">Dezembro</a>
+                                                                </li>
+                                                            </ul>
+                                                            <!-- Tab panes -->
+                                                            <div class="tab-content tabs card-block">                                                               
+
+                                                                  <!-- MES DE JANEIRO COMECA AQUI -->
+                                                                <div class="tab-pane " id="Janeiro" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Janeiro no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% janeiro.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                        href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/lancamento/deletar" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <input type="hidden" name="banco_id" value="<%= element.banco_id %>" />
+                                                                                                        <input type="hidden" name="receita_id" value="<%= element.receita_id %>" />
+                                                                                                        <input type="hidden" name="despesa_id" value="<%= element.despesa_id %>" />
+                                                                                                        <input type="hidden" name="valor_atual" value="<%= element.valor %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE JANEIRO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$:  <%= (receita_janeiro[0].receita == null) ? 0.00 : receita_janeiro[0].receita.toLocaleString('pt-br', {minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_janeiro[0].despesa == null) ? 0.00 : despesa_janeiro[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_janeiro[0].receita - despesa_janeiro[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>   
+                                                                            <%- include('../grafico/lancamento/grafico01_janeiro') %>
+                                                                        </div>                                                          
+                                                                    </div>                                                  
+                                                                </div>
+                                                                  <!-- MES DE JANEIRO TERMINA AQUI -->
+                                
+
+                                                                  <!-- MES DE FEVEREIRO COMECA AQUI -->
+                                                                <div class="tab-pane" id="Fevereiro" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Fevereiro no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% fevereiro.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/lancamento/deletar" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <input type="hidden" name="banco_id" value="<%= element.banco_id %>" />
+                                                                                                        <input type="hidden" name="receita_id" value="<%= element.receita_id %>" />
+                                                                                                        <input type="hidden" name="despesa_id" value="<%= element.despesa_id %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div  class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE FEVEREIRO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_fevereiro[0].receita == null) ? 0.00 : receita_fevereiro[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_fevereiro[0].despesa == null) ? 0.00 : despesa_fevereiro[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_fevereiro[0].receita - despesa_fevereiro[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>   
+                                                                            <%- include('../grafico/lancamento/grafico01_fevereiro') %>
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                <!-- MES DE FEVEREIRO TERMINA AQUI -->
+
+                                                                <!-- MES DE MARCO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Marco" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Março no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% marco.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE MARCO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_marco[0].receita == null) ? 0.00 : receita_marco[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_marco[0].despesa == null) ? 0.00 : despesa_marco[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_marco[0].receita - despesa_marco[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>  
+                                                                            <%- include('../grafico/lancamento/grafico01_marco') %> 
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                <!-- MES DE MARÇO TERMINA AQUI -->
+
+
+                                                                 <!-- MES DE ABRIL COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Abril" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Abril no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% abril.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE ABRIL <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_abril[0].receita == null) ? 0.00 : receita_abril[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_abril[0].despesa == null) ? 0.00 : despesa_abril[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_abril[0].receita - despesa_abril[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>   
+                                                                            <%- include('../grafico/lancamento/grafico01_abril') %> 
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                <!-- MES DE ABRIL TERMINA AQUI -->
+                                                               
+                                                                <div class="tab-pane" id="Maio" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Maio no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% maio.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE MAIO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_maio[0].receita == null) ? 0.00 : receita_maio[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_maio[0].despesa == null) ? 0.00 : despesa_maio[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_maio[0].receita - despesa_maio[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div> 
+                                                                            <%- include('../grafico/lancamento/grafico01_maio') %>   
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+
+
+                                                                 <!-- MES DE JUNHO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Junho" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Junho no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% junho.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE JUNHO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_junho[0].receita == null) ? 0.00 : receita_junho[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_junho[0].despesa == null) ? 0.00 : despesa_junho[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_junho[0].receita - despesa_junho[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>                                                                                              
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>  
+                                                                            <%- include('../grafico/lancamento/grafico01_junho') %>  
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                <!-- MES DE JUNHO TERMINA AQUI -->
+
+
+                                                                 <!-- MES DE JULHO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Julho" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Julho no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% julho.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE JULHO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_julho[0].receita == null) ? 0.00 : receita_julho[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_julho[0].despesa == null) ? 0.00 : despesa_julho[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_julho[0].receita - despesa_julho[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>  
+                                                                            <%- include('../grafico/lancamento/grafico01_julho') %>  
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                <!-- MES DE JULHO TERMINA AQUI -->
+
+
+                                                                  <!-- MES DE AGOSTO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Agosto" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Agosto no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% agosto.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE AGOSTO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_agosto[0].receita == null) ? 0.00 : receita_agosto[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_agosto[0].despesa == null) ? 0.00 : despesa_agosto[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_agosto[0].receita - despesa_agosto[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>  
+                                                                            <%- include('../grafico/lancamento/grafico01_agosto') %>  
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                 <!-- MES DE AGOSTO TERMINA AQUI -->
+
+
+                                                                  <!-- MES DE SETEMBRO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Setembro" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Setembro no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% setembro.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE SETEMBRO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_setembro[0].receita == null) ? 0.00 :receita_setembro[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_setembro[0].despesa == null) ? 0.00 : despesa_setembro[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_setembro[0].receita - despesa_setembro[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>  
+                                                                            <%- include('../grafico/lancamento/grafico01_setembro') %>  
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                 <!-- MES DE SETEMBRO TERMINA AQUI -->
+
+
+                                                                   <!-- MES DE OUTUBRO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Outubro" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Outubro no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% outubro.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE OUTUBRO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_outubro[0].receita == null) ? 0.00 : receita_outubro[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_outubro[0].despesa == null) ? 0.00 : despesa_outubro[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_outubro[0].receita - despesa_outubro[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>  
+                                                                            <%- include('../grafico/lancamento/grafico01_outubro') %>  
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                 <!-- MES DE OUTUBRO TERMINA AQUI -->
+
+
+                                                                  <!-- MES DE NOVEMBRO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Novembro" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Novembro no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% novembro.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE NOVEMBRO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_novembro[0].receita == null) ? 0.00 : receita_novembro[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_novembro[0].despesa == null) ? 0.00 : despesa_novembro[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_novembro[0].receita - despesa_novembro[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>   
+                                                                            <%- include('../grafico/lancamento/grafico01_novembro') %> 
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                 <!-- MES DE NOVEMBRO TERMINA AQUI -->
+
+
+                                                                  <!-- MES DE DESEMBRO COMEÇA AQUI -->
+                                                                <div class="tab-pane" id="Dezembro" role="tabpanel">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card">
+                                                                            <div class="card-header">
+                                                                                <h5>Abaixo Seus lançamentos correspondente aos mes de Desembro no ano de <%= ano %> </h5>
+                                                                                <span></span>                                                                                
+                                                                            </div>                                                                           
+                                                                            <div class="card-block">
+                                                                                <table id="datatable" class="table datatable" style="display: inline;">
+                                                                                    <thead>                                                      
+                                                                                        <tr>
+                                                                                            <th scope="col">Id</th>
+                                                                                            <th scope="col">Descricao</th>       
+                                                                                            <th scope="col">valor</th>
+                                                                                            <th scope="col">Tipo</th>   
+                                                                                            <th scope="col">Data</th>                                                         
+                                                                                            <th scope="col">Acão</th>                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                   
+                                                                                        <% desembro.forEach(element => { %>
+                                                                                            <tr>
+                                                                                                <th scope="row">
+                                                                                               <%= element.id %>
+                                                                                                </th>
+                                                                                                <td>
+                                                                                                    <%= element.descricao %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                   R$: <%= element.valor %>  
+                                                                                                </td>                                                                                   
+                                                                                                <td>
+                                                                                                    <%= element.tipo %>  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= element.data %>  
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <a title="Editar"
+                                                                                                         href="/lancamento/editar/ <%= element.id %>"><i
+                                                                                                            class="fas fa-edit"></i></a>
+                                                                                                    <form
+                                                                                                        action="/" onclick="confirmaDelecao(event, this);" style="display: inline;" method="post">
+                                                                                                        <input type="hidden" name="id" value="<%= element.id %>">  
+                                                                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                                                                        <button  style="border: none;" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                                                                                                    </form>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <%}) %> 
+                                                                                    </tbody>
+                                                                                </table>                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">                                                
+                                                                                    <div class="card-block accordion-block color-accordion-block">
+                                                                                        <div class="color-accordion" id="color-accordion">
+                                                                                            <a style="color:#fff; font-size: 0.875em;" class="accordion-msg b-none  waves-light btn btn-primary">RESUMO GERAL MÊS DE DESEMBRO <%= ano %></a>
+                                                                                            <div class="accordion-desc">
+                                                                                                <table class="table datatable" >
+                                                                                                    <thead>                                                      
+                                                                                                        <tr>                                                                      
+                                                                                                            <th scope="col">( + ) Total de receitas: <span style="color:blue" >R$: <%= (receita_desembro[0].receita == null) ? 0.00 : receita_desembro[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>                                                                           
+                                                                                                        </tr>     
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= (despesa_desembro[0].despesa == null) ? 0.00 : despesa_desembro[0].despesa.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></span></th>  
+                                                                                                        </tr>    
+                                                                                                        <tr>                                                     
+                                                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita_desembro[0].receita - despesa_desembro[0].despesa).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %></span></th> 
+                                                                                                        </tr> 
+                                                                                                        <tr> 
+                                                                                                            <th scope="col">( = ) Saldo Caixa: <span style="color:rgb(47, 0, 255)" >R$: <%= (banco_saldo[0].saldo == null) ? 0.00 : banco_saldo[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </span></th>                 
+                                                                                                        </tr>                                                              
+                                                                                                    </thead>
+                                                                                                </table>
+                                                                                            </div> 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>   
+                                                                            <%- include('../grafico/lancamento/grafico01_desembro') %> 
+                                                                        </div>                                                          
+                                                                    </div> 
+                                                                </div>
+                                                                 <!-- MES DE DESEMBRO TERMINA AQUI -->
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Row end -->
+                                                </div>
+                                            </div>
+                                            <!-- Bootstrap tab card end -->
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../includes/footer') %>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+<script>
+$("#datepicker").datepicker({
+    format: "yyyy",
+    viewMode: "years", 
+    minViewMode: "years"
+});
+</script>
+
+<script>
+    function confirmaDelecao(event, form){
+        event.preventDefault();
+        var decisao = confirm('Deseja realmente deletar essa despesa?');
+        if(decisao){
+            form.submit();
+        }
+    }
+</script>
+<script>   
+    $(document).ready(function () {
+        $('#datatable').DataTable({
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Exibir _MENU_ registros por página",
+                "sZeroRecords": "Nenhum resultado encontrado",
+                "sEmptyTable": "Nenhum resultado encontrado",
+                "sInfo": "Exibindo do _START_ até _END_ de um total de _TOTAL_ registros",
+                "sInfoEmpty": "Exibindo do 0 até 0 de um total de 0 registros",
+                "sInfoFiltered": "(Filtrado de um total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ativar para ordenar a columna de maneira ascendente",
+                    "sSortDescending": ": Ativar para ordenar a columna de maneira descendente"
+                }
+            }
+        });
+    });                       
+</script>
+
+</body>
+
+</html>

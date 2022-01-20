@@ -1,0 +1,162 @@
+<%- include('../includes/header') %>
+
+<body>
+
+<div class="theme-loader">
+    <div class="loader-track">
+        <div class="preloader-wrapper">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <%- include('../includes/top') %>
+    
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+
+                <%- include('../includes/nav') %>
+
+
+                <div class="pcoded-content">
+                    <!-- Page-header start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Área Administrativa</h5>
+                                        <p class="m-b-0">Seja bem vindo </p>
+                                    </div>                                
+                                </div> 
+                                <div class="col-md-6">
+                                    <%- include('../includes/messeges') %>
+                                </div>                              
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Page-header end -->
+                    <div class="pcoded-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                         <h5>Editar banco</h5>     
+                                                        </div>      
+                                                        <div class="col-sm-2">
+                                                         <a href="/banco/index" type="submit" class="btn waves-effect waves-light btn-primary btn-square">Voltar</a>
+                                                        </div>                                             
+                                                     </div>
+                                                    
+                                                </div>
+                                                <div class="card-block">
+                                                    <form action="/banco/atualizar" method="post">
+                                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <label>Banco</label>
+                                                                <input type="hidden" name="id" value="<%= banco[0].id %>" >
+                                                                <input type="text" class="form-control" name="banco" value="<%= banco[0].banco %>">                                                                
+                                                            </div> 
+                                                            <div class="col-sm-6">
+                                                                <label>Saldo</label>                                                              
+                                                                <input type="text" class="form-control" id="moeda" name="saldo" value="<%= banco[0].saldo %>" >                                                                
+                                                            </div> 
+                                                        </div>    
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <label>Tipo</label>
+                                                                <select class="form-control" name="tipo" id="tipo" required >
+                                                                    <option selected disabled>Seleciona um tipo</option>     
+                                                                    <% var selected = (banco[0].tipo == 'credito') ? "selected" : "";  %>               
+                                                                    <% var selected2 = (banco[0].tipo == 'debito') ? "selected" : "";  %>                                               
+                                                                     <option value="debito" <%=selected2 %> >Debito</option>    
+                                                                     <option value="credito" <%=selected %> >Credito</option>                                                                   
+                                                                   </select>
+                                                            </div> 
+                                                        </div>      
+                                                        <button type="submit" class="btn waves-effect waves-light btn-primary btn-square">Salvar</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="styleSelector">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../includes/footer') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+</head>
+<script>
+  $(function() {
+  $('#moeda').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+})
+</script>
+</body>
+
+</html>
