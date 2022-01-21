@@ -170,7 +170,7 @@
                                                                             <th scope="col">( - ) Total de despesas: <span style="color:red" >R$: <%= despesa[0].valor %></span></th>  
                                                                         </tr>    
                                                                         <tr>                                                     
-                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= receita[0].valor - despesa[0].valor %> </span></th> 
+                                                                            <th scope="col">( = ) Saldo (receitas - despesas): <span style="color:rgb(7, 63, 51)" >R$: <%= (receita[0].valor - despesa[0].valor).toLocaleString('pt-BR', { minimumFractionDigits: 2});  %> </span></th> 
                                                                         </tr>                                                                                                                                    
                                                                     </thead>
                                                                 </table>

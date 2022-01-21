@@ -45,6 +45,8 @@ class Usuario{
         if(this.erros.length > 0) {
             return;
         }
+        const salt = bcryptjs.genSaltSync();
+        this.body.senha = bcryptjs.hashSync(this.body.senha, salt); 
         await database.update(this.body).where({'id': id}).table('usuario').then(dados => {            
         }).catch(err => {
             logger.error(err);

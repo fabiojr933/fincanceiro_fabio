@@ -89,7 +89,7 @@
                                                 <div class="card-block">
                                                     <div class="row align-items-center">
                                                         <div class="col-8">
-                                                            <h5 class="text-c-blue">R$: <%= (conta[0].saldo == null) ? 0.00 : conta[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></h5>
+                                                            <h5 class="text-c-blue">R$: <%= (0 == []) ? 0.00 : conta[0].saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %></h5>
                                                         </div>
                                                         <div class="col-4 text-right">
                                                             <i class="fa fa-hand-o-down f-28"></i>
@@ -141,7 +141,7 @@
                                                             <h5 class="text-c-green">R$: <%= (receita[0].receita == null) ? 0.00 : receita[0].receita.toLocaleString('pt-BR', { minimumFractionDigits: 2}); %> </h5>
                                                         </div>
                                                         <div class="col-4 text-right">
-                                                            <i class="fa fa-file-text-o f-28"></i>
+                                                            <i class="fa fa-calendar-check-o f-28"></i>
                                                         </div>
                                                     </div>
                                                 </div>

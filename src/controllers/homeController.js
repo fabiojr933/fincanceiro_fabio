@@ -12,7 +12,7 @@ exports.home = async (req, res) => {
         await inicio.saldo_bancos();      
         await inicio.grafico_01(ano);
         await inicio.grafico_02(ano);
-      
+      console.log(inicio.saldo_conta)
         res.render('index', {ano: ano, mes: mes, usuario: email, despesa: inicio.despesa_mes, receita: inicio.receita_mes, conta: inicio.saldo_conta, grafico01: inicio.relatorio_grafico_01,
             grafico02: inicio.relatorio_grafico_02 });
     } catch (error) {
